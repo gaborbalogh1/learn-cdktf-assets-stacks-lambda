@@ -15,3 +15,18 @@ npm install --global cdktf-cli@latest
 npm fund
 
 run cdktf help //to confirm installation
+
+Next install provider 
+cdktf provider add "aws@~>4.0" random 
+cdktf list
+
+Next Deploy the lambda function
+cdktf deploy lambda-hello-world
+cdktf deploy lambda-hello-name
+
+install terraform 
+
+https://learn.hashicorp.com/tutorials/terraform/install-cli
+
+install nodejs
+sudo apt-get install -y nodejs
