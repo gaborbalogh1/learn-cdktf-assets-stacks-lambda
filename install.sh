@@ -1,31 +1,10 @@
 #! /bin/bash
-# to make it work:
-cd cdktf
-npm install
-npm install -g npm@8.19.2   // optional
-npm fund
 
-# Next install cdktf
-npm install --global cdktf-cli@latest
-npm fund
-
-run cdktf help //to confirm installation
-
-# initialize new project with typescript 
-cdktf init --template=typescript --local
-
-# Next install provider 
-cdktf provider add "aws@~>4.0" random 
-cdktf list
-cdktf provider add kreuzwerker/docker
-# Next Deploy the lambda function
-cdktf deploy lambda-hello-world
-cdktf deploy lambda-hello-name
-
+echo "begin installation"
 # install terraform 
-
-https://learn.hashicorp.com/tutorials/terraform/install-cli
+# https://learn.hashicorp.com/tutorials/terraform/install-cli
 sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
+
 wget -O- https://apt.releases.hashicorp.com/gpg | \
     gpg --dearmor | \
     sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
@@ -41,3 +20,33 @@ sudo apt-get install terraform
 
 # install nodejs
 sudo apt-get install -y nodejs
+
+echo "installing yarn"
+
+sleep -5
+
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
+sudo apt update
+sudo apt install yarn
+
+sudo apt install --no-install-recommends yarn
+
+echo "checking yarn version"
+yarn --version
+
+sudo apt autoremove -y
+
+# to make it work:
+cd cdktf
+
+echo "" Next install cdktf
+npm install --global cdktf-cli@latest
+
+echo "runing cdktf help to confirm installation"
+
+cdktf --version
+
+echo "initialize new project with typescript by running cdktf init --template=typescript --local"
+echo "Intallation finished goodbye..."

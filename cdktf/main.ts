@@ -1,34 +1,46 @@
 import { Construct } from "constructs";
-import { App, TerraformStack } from "cdktf";
-//import { NullProvider } from "@cdktf/provider-null/lib/provider";
-//import { Container, Image, DockerProvider } from "@cdktf/provider-docker";
+import { App, TerraformStack, } from "cdktf";
+import {Image, Container} from './.gen/providers/docker';
+//import { AwsProvider, ec2 } from "./.gen/providers/aws";
+
 
 class MyStack extends TerraformStack {
   constructor(scope: Construct, name: string) {
     super(scope, name);
 
-    //new DockerProvider(this, "docker", {});
-
-    // const dockerImage = new Image(this, "nginxImage", {
-    //   name: "nginx:latest",
+    // define resources here
+    // const image = new Image(this, "nginxImage", {
+    //   name: 'nginx:latest',
     //   keepLocally: false,
-    // });
+    // })
 
     // new Container(this, "nginxContainer", {
+    //   image: image.latest,
     //   name: "tutorial",
-    //   image: dockerImage.latest,
-    //   ports: [
-    //     {
-    //       internal: 80,
-    //       external: 8000,
-    //     },
-    //   ],
+    //   ports: [{
+    //     internal: 80,
+    //     external: 8080
+    //   }],
+    // })
+
+    // docker example dont work will try aws instead
+
+    // new AwsProvider(this, "AWS", {
+    //   region: "us-west-1",
     // });
-    console.log("setup project.")
+
+    // const instance = new ec2.Instance(this, "compute", {
+    //   ami: "ami-01456a894f71116f2",
+    //   instanceType: "t2.micro",
+    // });
+
+    // new TerraformOutput(this, "public_ip", {
+    //   value: instance.publicIp,
+    // });
+
   }
 }
 
 const app = new App();
-new MyStack(app, "learn-cdktf-docker");
+new MyStack(app, "cdktf");
 app.synth();
-

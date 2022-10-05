@@ -47,3 +47,27 @@ sudo apt-get install terraform
 
 # install nodejs
 sudo apt-get install -y nodejs
+
+# I have now set a basic script up to run the installation 
+# after it has run you should have all dependencies installed to start a project
+
+# manual steps
+
+cdktf init --template=typescript --local
+
+npm fund
+npm install -g npm@8.19.2   // optional
+npm fund
+# Next install provider 
+cdktf provider add "aws@~>4.0" random 
+cdktf list
+cdktf provider add kreuzwerker/docker
+# Next Deploy the lambda function
+cdktf deploy lambda-hello-world
+cdktf deploy lambda-hello-name
+
+# this doesnt work
+import * as aws from "@cdktf/provider-aws";
+import * as random from "@cdktf/provider-random";
+
+import { AwsProvider, ec2 } from "./.gen/providers/aws";
