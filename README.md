@@ -53,6 +53,17 @@ sudo apt-get install -y nodejs
 
 # manual steps
 
+# to make it work:
+cd cdktf
+
+echo "Next install cdktf" 
+npm install --global cdktf-cli@latest
+
+echo "runing cdktf help to confirm installation"
+
+cdktf --version
+
+# initialize new project
 cdktf init --template=typescript --local
 
 npm fund
@@ -67,6 +78,7 @@ cdktf deploy lambda-hello-world
 cdktf deploy lambda-hello-name
 
 # this doesnt work
+import * as docker from @cdktf/provider-docker;
 import * as aws from "@cdktf/provider-aws";
 import * as random from "@cdktf/provider-random";
 

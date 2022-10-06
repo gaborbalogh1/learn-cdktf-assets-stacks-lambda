@@ -38,15 +38,5 @@ yarn --version
 
 sudo apt autoremove -y
 
-# to make it work:
-cd cdktf
-
-echo "" Next install cdktf
-npm install --global cdktf-cli@latest
-
-echo "runing cdktf help to confirm installation"
-
-cdktf --version
-
 echo "initialize new project with typescript by running cdktf init --template=typescript --local"
 echo "Intallation finished goodbye..."

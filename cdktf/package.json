@@ -20,9 +20,11 @@
     "node": ">=14.0"
   },
   "dependencies": {
-    "@cdktf/provider-aws": "^10.0.2",
+    "@cdktf/provider-aws": "^10.0.4",
+    "@cdktf/provider-docker": "^3.0.4",
+    "@cdktf/provider-random": "^3.0.4",
     "cdktf": "^0.13.0",
-    "constructs": "^10.1.122"
+    "constructs": "^10.1.123"
   },
   "devDependencies": {
     "@types/jest": "^29.1.1",

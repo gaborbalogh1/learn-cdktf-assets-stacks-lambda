@@ -1,14 +1,9 @@
 {
   "language": "typescript",
   "app": "npx ts-node main.ts",
-  "projectId": "cbab7daa-5553-404e-b45a-83e1d7cb9419",
+  "projectId": "8eba9f71-5a06-4178-a544-0df57f306a97",
   "sendCrashReports": "false",
-  "terraformProviders": [
-    "aws",
-    "kreuzwerker/docker",
-    "random",
-    "null"
-  ],
+  "terraformProviders": [],
   "terraformModules": [],
   "context": {
     "excludeStackIdFromLogicalIds": "true",
