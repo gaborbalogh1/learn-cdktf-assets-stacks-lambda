@@ -137,3 +137,8 @@ cdk deploy
 # more available commands
 cdk watch - enable hot deployments
 cdk watch --no-hotswap - to disable hot deployments
+
+# the new lambda function code relies on two environment variables:
+
+HITS_TABLE_NAME is the name of the DynamoDB table to use for storage.
+DOWNSTREAM_FUNCTION_NAME is the name of the downstream AWS Lambda function.
