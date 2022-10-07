@@ -1,6 +1,7 @@
 #! /bin/bash
 
 echo "begin installation"
+
 # install terraform 
 # https://learn.hashicorp.com/tutorials/terraform/install-cli
 sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
@@ -37,6 +38,11 @@ echo "checking yarn version"
 yarn --version
 
 sudo apt autoremove -y
+
+# install aws cli 
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
 
 echo "initialize new project with typescript by running cdktf init --template=typescript --local"
 echo "Intallation finished goodbye..."
