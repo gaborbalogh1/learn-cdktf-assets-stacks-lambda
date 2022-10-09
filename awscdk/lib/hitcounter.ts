@@ -3,6 +3,7 @@ import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as dynamodb from 'aws-cdk-lib/aws-dynamodb';
 import { Construct } from 'constructs';
 
+
 export interface HitCounterProps{
     /** the function for which we want to count url hits  */
     downstream: lambda.IFunction;
@@ -29,5 +30,10 @@ export class HitCounter extends Construct {
             }
         });
         
+        /** adds permission for the lambda function to wtire  */
+        table.grantReadWriteData(this.handler);
+        
+        /** grant permission for the lambda function to the downstream function */
+        props.downstream.grantInvoke(this.handler);
     }
 }

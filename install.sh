@@ -44,5 +44,13 @@ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip
 unzip awscliv2.zip
 sudo ./aws/install
 
+
+# install step 2 set up aws cdk globally
+# install the cdk
+npm install -g aws-cdk
+
+# check version
+cdk --version
+
 echo "initialize new project with typescript by running cdktf init --template=typescript --local"
 echo "Intallation finished goodbye..."
